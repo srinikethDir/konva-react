@@ -1,0 +1,96 @@
+/* Global Styling */
+/*body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the AppBar 
+.MuiAppBar-root {
+  background-color: #2196f3; }
+
+.MuiTypography-h6 {
+  font-weight: bold;
+}
+
+.MuiButton-root {
+  margin-right: 10px;
+}
+
+/* Drawer Styles 
+.MuiDrawer-paper {
+  width: 250px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MuiListItemText-root {
+  color: #555; /* Text color for drawer items 
+}
+
+.MuiListItemButton-root:hover {
+  background-color: #e0f7fa; /* Light hover effect 
+}
+
+/* Canvas Stage 
+.konvajs-content {
+  outline: none;
+}
+
+/* Import Image Button (hidden input file styling) 
+input[type="file"] {
+  display: none;
+}
+
+/* Styling for the Stage 
+.stage-container {
+  position: relative;
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+
+/* Styling for buttons inside the toolbar 
+.toolbar-button {
+  color: #ffffff !important;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.toolbar-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover and focus effects for SVG list buttons 
+.svg-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.svg-list-item:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
+}
+
+.svg-icon {
+  margin-right: 10px;
+}
+
+/* Resizable Transformer outline styling 
+.konva-transformer {
+  stroke: #2196f3;
+  stroke-width: 2px;
+}
+/* Align and space icons 
+.MuiIconButton-root {
+  margin-left: 8px;
+}
+
+/* Ensure consistent size and hover effect 
+.MuiSvgIcon-root {
+  font-size: 1.5rem;
+}
+
+.MuiIconButton-root:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+*/
