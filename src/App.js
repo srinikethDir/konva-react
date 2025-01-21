@@ -244,8 +244,11 @@ const App = () => {
       Import Image
     </Button>
     <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
-      <MenuIcon />
-    </IconButton>
+  <Typography variant="button" style={{ fontSize: "16px" }}>
+    Add Icons
+  </Typography>
+</IconButton>
+
   </Toolbar>
 </AppBar>
 
