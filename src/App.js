@@ -12,6 +12,12 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
+import AccountCircle from "@mui/icons-material/AccountCircle";
+import AssessmentIcon from "@mui/icons-material/Assessment";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+
+import './App.css';
+
 
 const svgImages = {
   person:
@@ -150,7 +156,7 @@ const App = () => {
     setElements([
       ...elements,
       {
-        id:` text-${elements.length + 1}`,
+        id: `text-${elements.length + 1}`,
         type: "text",
         x: 50,
         y: 50,
@@ -174,7 +180,7 @@ const App = () => {
         setElements([
           ...elements,
           {
-            id: `image-${elements.length + 1}`,
+            id:` image-${elements.length + 1}`,
             type: "image",
             x: 50,
             y: 50,
@@ -214,21 +220,35 @@ const App = () => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" style={{ flexGrow: 1  }}>
-            CANVAS
-          </Typography>
-          <Button color="inherit" onClick={handleAddText}>
-            Text
-          </Button>
-          <Button color="inherit" onClick={() => fileInputRef.current.click()}>
-            Import Image
-          </Button>
-          <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+  <Toolbar>
+    <Typography variant="h6" style={{ flexGrow: 1 }}>
+      CANVAS
+    </Typography>
+    <IconButton color="inherit" title="Dashboard">
+      <DashboardIcon />
+    </IconButton>
+    <IconButton color="inherit" title="Reports">
+      <AssessmentIcon />
+    </IconButton>
+    <IconButton color="inherit" title="User Account">
+      <AccountCircle />
+    </IconButton>
+    <Button color="inherit" className="toolbar-button" onClick={handleAddText}>
+      Text
+    </Button>
+    <Button
+      color="inherit"
+      className="toolbar-button"
+      onClick={() => fileInputRef.current.click()}
+    >
+      Import Image
+    </Button>
+    <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
+      <MenuIcon />
+    </IconButton>
+  </Toolbar>
+</AppBar>
+
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <List>
           {["person", "light", "camera"].map((icon) => (
@@ -288,5 +308,3 @@ const root = createRoot(container);
 root.render(<App />);
 
 export default App;
-
-
