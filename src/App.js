@@ -15,25 +15,84 @@ import Button from "@mui/material/Button";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+
 const svgImages = {
-  person:
-    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjQiPjwvY2lyY2xlPjxsaW5lIHgxPSIxMiIgeTE9IjEyIiB4Mj0iMTIiIHkyPSIxNiI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjE2IiB4Mj0iMTIuMDEiIHkyPSIxNiI+PC9saW5lPjwvc3ZnPg==",
-
-  light:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI0Ij48L2NpcmNsZT48bGluZSB4MT0iMTIiIHkxPSI0IiB4Mj0iMTIiIHkyPSIyIj48L2xpbmU+PGxpbmUgeDE9IjE2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iNSI+PC9saW5lPjxsaW5lIHgxPSI4IiB5MT0iNiIgeDI9IjYiIHkyPSI1Ij48L2xpbmU+PC9zdmc+",
-
-  camera:
-    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIxIiB5PSI2IiB3aWR0aD0iMjIiIGhlaWdodD0iMTQiIHJ4PSIxIj48L3JlY3Q+PHBhdGggZD0iTTUgNiBMOSA0IEgxNCI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiPjwvY2lyY2xlPjwvc3ZnPg==",
-
+  person: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjgiIHI9IjQiPjwvY2lyY2xlPjxsaW5lIHgxPSIxMiIgeTE9IjEyIiB4Mj0iMTIiIHkyPSIxNiI+PC9saW5lPjxsaW5lIHgxPSIxMiIgeTE9IjE2IiB4Mj0iMTIuMDEiIHkyPSIxNiI+PC9saW5lPjwvc3ZnPg==",
+  light: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSI0Ij48L2NpcmNsZT48bGluZSB4MT0iMTIiIHkxPSI0IiB4Mj0iMTIiIHkyPSIyIj48L2xpbmU+PGxpbmUgeDE9IjE2IiB5MT0iNiIgeDI9IjE4IiB5Mj0iNSI+PC9saW5lPjxsaW5lIHgxPSI4IiB5MT0iNiIgeDI9IjYiIHkyPSI1Ij48L2xpbmU+PC9zdmc+",
+  camera: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIxIiB5PSI2IiB3aWR0aD0iMjIiIGhlaWdodD0iMTQiIHJ4PSIxIj48L3JlY3Q+PHBhdGggZD0iTTUgNiBMOSA0IEgxNCI+PC9wYXRoPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjMiPjwvY2lyY2xlPjwvc3ZnPg==",
 };
-
 
 const EditableText = ({ shapeProps, isSelected, onSelect, onChange }) => {
   const textRef = useRef();
   const trRef = useRef();
-  const [isEditing, setIsEditing] = useState(false);
-  const [text, setText] = useState(shapeProps.text);
 
-  const MIN_WIDTH = 20;
+  const handleDblClick = () => {
+    const textNode = textRef.current;
+    const stage = textNode.getStage();
+    const textPosition = textNode.absolutePosition();
+
+    const areaPosition = {
+      x: stage.container().offsetLeft + textPosition.x,
+      y: stage.container().offsetTop + textPosition.y,
+    };
+
+    const textarea = document.createElement('textarea');
+    document.body.appendChild(textarea);
+
+    textarea.value = textNode.text();
+    textarea.style.position = 'absolute';
+    textarea.style.top = `${areaPosition.y}px`;
+    textarea.style.left = `${areaPosition.x}px`;
+    textarea.style.width = `${textNode.width() - textNode.padding() * 2}px`;
+    textarea.style.height = `${textNode.height() - textNode.padding() * 2 + 10}px`;
+    textarea.style.fontSize = `${textNode.fontSize()}px`;
+    textarea.style.border = 'none';
+    textarea.style.padding = '0px';
+    textarea.style.margin = '0px';
+    textarea.style.overflow = 'hidden';
+    textarea.style.background = 'none';
+    textarea.style.outline = 'none';
+    textarea.style.resize = 'none';
+    textarea.style.lineHeight = `${textNode.lineHeight()}`;
+    textarea.style.fontFamily = textNode.fontFamily();
+    textarea.style.color = textNode.fill();
+    textarea.style.transformOrigin = 'left top';
+
+    textNode.hide();
+
+    textarea.focus();
+
+    const removeTextarea = () => {
+      textarea.parentNode.removeChild(textarea);
+      window.removeEventListener('click', handleOutsideClick);
+      textNode.show();
+      onChange({
+        ...shapeProps,
+        text: textarea.value
+      });
+    };
+
+    textarea.addEventListener('keydown', (e) => {
+     
+        if (e.keyCode === 13 && !e.shiftKey) {
+          removeTextarea(); 
+
+      }
+      if (e.keyCode === 27) {
+        removeTextarea();
+      }
+    });
+
+    function handleOutsideClick(e) {
+      if (e.target !== textarea) {
+        removeTextarea();
+      }
+    }
+
+    setTimeout(() => {
+      window.addEventListener('click', handleOutsideClick);
+    });
+  };
 
   React.useEffect(() => {
     if (isSelected) {
@@ -42,56 +101,15 @@ const EditableText = ({ shapeProps, isSelected, onSelect, onChange }) => {
     }
   }, [isSelected]);
 
-  const handleDoubleClick = (e) => {
-    setIsEditing(true);
-
-    const stage = e.target.getStage();
-    const { x, y } = e.target.getAbsolutePosition();
-    const stageBox = stage.container().getBoundingClientRect();
-
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-
-    textarea.style.position = "absolute";
-    textarea.style.top = `${stageBox.top + y}px`;
-    textarea.style.left = `${stageBox.left + x}px`;
-    textarea.style.width = `${shapeProps.width || 200}px`;
-    textarea.style.fontSize = `${shapeProps.fontSize}px`;
-    textarea.style.border = "1px solid gray";
-    textarea.style.padding = "4px";
-    textarea.style.margin = "0";
-    textarea.style.overflow = "hidden";
-    textarea.style.outline = "none";
-    textarea.style.resize = "none";
-    textarea.style.lineHeight = "1";
-    textarea.style.color = shapeProps.fill || "black";
-    textarea.style.background = "white";
-    textarea.style.fontFamily = "initial";
-
-    textarea.focus();
-
-    const handleTextareaBlur = () => {
-      setIsEditing(false);
-      const newText = textarea.value.trim() || "Double-click to edit";
-      setText(newText);
-      onChange({ ...shapeProps, text: newText });
-      document.body.removeChild(textarea);
-    };
-
-    textarea.addEventListener("blur", handleTextareaBlur);
-  };
-
   return (
     <>
       <Text
         ref={textRef}
         {...shapeProps}
-        text={text}
         draggable
         onClick={onSelect}
         onTap={onSelect}
-        onDblClick={handleDoubleClick}
+        onDblClick={handleDblClick}
         onDragEnd={(e) => {
           onChange({
             ...shapeProps,
@@ -101,7 +119,7 @@ const EditableText = ({ shapeProps, isSelected, onSelect, onChange }) => {
         }}
         onTransform={() => {
           const node = textRef.current;
-          const newWidth = Math.max(node.width() * node.scaleX(), MIN_WIDTH);
+          const newWidth = Math.max(node.width() * node.scaleX(), 20);
 
           node.setAttrs({
             width: newWidth,
@@ -115,13 +133,13 @@ const EditableText = ({ shapeProps, isSelected, onSelect, onChange }) => {
           });
         }}
       />
-      {isSelected && !isEditing && (
+      {isSelected && (
         <Transformer
           ref={trRef}
           padding={5}
-          enabledAnchors={["middle-left", "middle-right"]}
+          enabledAnchors={['middle-left', 'middle-right']}
           boundBoxFunc={(oldBox, newBox) => {
-            if (Math.abs(newBox.width) < MIN_WIDTH) {
+            if (Math.abs(newBox.width) < 20) {
               return oldBox;
             }
             return newBox;
@@ -132,8 +150,7 @@ const EditableText = ({ shapeProps, isSelected, onSelect, onChange }) => {
   );
 };
 
-
-// Separate component for editable image
+// Rest of the code remains the same as in the original implementation
 const EditableImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
   const imageRef = useRef();
   const trRef = useRef();
@@ -164,7 +181,6 @@ const EditableImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
           const node = imageRef.current;
           const scaleX = node.scaleX();
           const scaleY = node.scaleY();
-         
 
           node.scaleX(1);
           node.scaleY(1);
@@ -192,6 +208,7 @@ const EditableImage = ({ shapeProps, isSelected, onSelect, onChange }) => {
   );
 };
 
+// Remaining App component is unchanged from the original implementation
 const App = () => {
   const [elements, setElements] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
@@ -202,7 +219,7 @@ const App = () => {
     setElements([
       ...elements,
       {
-        id:`text-${elements.length + 1}`,
+        id: `text-${elements.length + 1}`,
         type: "text",
         x: 50,
         y: 50,
@@ -210,11 +227,13 @@ const App = () => {
         fontSize: 20,
         draggable: true,
         rotation: 0,
-        flipEnabled:false,
+        flipEnabled: false,
+        width: 200,
       },
     ]);
   };
 
+  // Rest of the code is the same as the original implementation
   const handleImportImage = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -264,6 +283,7 @@ const App = () => {
     };
   };
 
+  // Remaining return statement and other methods are the same as the original implementation
   return (
     <div>
       <AppBar position="static">
@@ -272,14 +292,14 @@ const App = () => {
             CANVAS
           </Typography>
           <IconButton color="inherit" title="Dashboard">
-      <DashboardIcon />
-    </IconButton>
-    <IconButton color="inherit" title="Reports">
-      <AssessmentIcon />
-    </IconButton>
-    <IconButton color="inherit" title="User Account">
-      <AccountCircle />
-    </IconButton>
+            <DashboardIcon />
+          </IconButton>
+          <IconButton color="inherit" title="Reports">
+            <AssessmentIcon />
+          </IconButton>
+          <IconButton color="inherit" title="User Account">
+            <AccountCircle />
+          </IconButton>
           <Button color="inherit" onClick={handleAddText} style={{fontFamily:"initial"}}>
             Text
           </Button>
@@ -287,11 +307,10 @@ const App = () => {
             Import Image
           </Button>
           <IconButton color="inherit" onClick={() => setDrawerOpen(true)}>
-  <Typography variant="button" style={{ fontSize: "16px" }} style={{fontFamily:"robek"}}>
-    Icons
-  </Typography>
-</IconButton>
-
+            <Typography variant="button" style={{ fontSize: "16px" }} style={{fontFamily:"robek"}}>
+              Icons
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
@@ -300,7 +319,7 @@ const App = () => {
           {["person", "light", "camera"].map((icon) => (
             <ListItem key={icon}>
               <ListItemButton onClick={() => handleAddSvgIcon(icon)}>
-              <ListItemText primary={`Add ${icon.charAt(0).toUpperCase() + icon.slice(1)}`} />
+                <ListItemText primary={`Add ${icon.charAt(0).toUpperCase() + icon.slice(1)}`} />
               </ListItemButton> 
             </ListItem>
           ))}
@@ -322,7 +341,7 @@ const App = () => {
               key: el.id,
               shapeProps: el,
               isSelected: el.id === selectedId,
-              onSelect: () => setSelectedId(el.id),
+              onSelect:() => setSelectedId(el.id),
               onChange: (newAttrs) => {
                 const items = elements.slice();
                 items[i] = newAttrs;
